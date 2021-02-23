@@ -17,6 +17,8 @@ const db = new sqlite3.Database('./db/election.db', err => {
     console.log('Connected to the election database.');
 });
 
+db.get("PRAGMA foreign_keys = ON")
+
 // Get all candidates
 app.get('/api/candidates', (req, res) => 
 {
